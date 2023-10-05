@@ -1,10 +1,11 @@
-from tools.tools import get_profile_url
-
-from langchain import PromptTemplate
-
+# External dependencies
+from langchain.prompts import PromptTemplate
 from langchain.agents import initialize_agent, Tool
 from langchain.agents import AgentType
 from langchain.chat_models import ChatOpenAI
+
+# Internal dependencies
+from tools.tools import get_profile_url
 
 
 def lookup(name: str) -> str:

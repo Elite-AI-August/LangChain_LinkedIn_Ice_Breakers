@@ -1,6 +1,8 @@
+# External dependencies
 from langchain.utilities import SerpAPIWrapper
 
 
+# A custom SerpAPI Wrapper has been created to appropriately handle the response from the original SerpAPIWrapper
 class CustomSerpAPIWrapper(SerpAPIWrapper):
     def __init__(self):
         super(CustomSerpAPIWrapper, self).__init__()
@@ -38,7 +40,7 @@ class CustomSerpAPIWrapper(SerpAPIWrapper):
 
 
 def get_profile_url(name: str):
-    """Searches for Linkedin or twitter Profile Page."""
+    """Searches for LinkedIn or Twitter Profile Page."""
     search = CustomSerpAPIWrapper()
     res = search.run(f"{name}")
     return res

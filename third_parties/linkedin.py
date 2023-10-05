@@ -1,7 +1,10 @@
+# External dependencies
 import os
 import requests
 
 
+# Scrape data from LinkedIn using the Proxycurl API
+# The profile url is passed to this function by the linkedin_lookup_agent
 def scrape_linkedin_profile(linkedin_profile_url: str):
     """scrape information from LinkedIn profiles,
     Manually scrape the information from the LinkedIn profile"""
@@ -13,6 +16,7 @@ def scrape_linkedin_profile(linkedin_profile_url: str):
     )
 
     data = response.json()
+    # Filter the data to reduce token usage from irrelevant topics
     data = {
         k: v
         for k, v in data.items()
